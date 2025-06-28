@@ -1,0 +1,44 @@
+{
+  "name": "paper-trend-analyzer",
+  "version": "1.0.0",
+  "description": "学会論文トレンド分析Webアプリケーション",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'Build completed'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "paper",
+    "analysis",
+    "trend",
+    "academic",
+    "research",
+    "pdf",
+    "nlp",
+    "visualization"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/paper-trend-analyzer.git"
+  },
+  "homepage": "https://your-domain.com"
+}

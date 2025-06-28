@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学会論文トレンド分析</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>学会論文トレンド分析システム</h1>
+        
+        <div class="upload-section">
+            <h2>PDFファイルアップロード</h2>
+            <div class="file-upload">
+                <input type="file" id="pdfFile" accept=".pdf" multiple>
+                <label for="pdfFile" class="upload-btn">PDFを選択</label>
+                <div id="fileList"></div>
+            </div>
+            <button id="analyzeBtn" class="analyze-btn" disabled>分析開始</button>
+        </div>
+
+        <div class="progress-section" id="progressSection" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div id="progressText">処理中...</div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2>分析結果</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総論文数</h3>
+                    <div id="totalPapers" class="stat-number">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>ユニークキーワード数</h3>
+                    <div id="uniqueKeywords" class="stat-number">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均文字数</h3>
+                    <div id="avgLength" class="stat-number">0</div>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-section">
+                    <h3>キーワード頻度トップ20</h3>
+                    <canvas id="keywordChart"></canvas>
+                </div>
+                
+                <div class="chart-section">
+                    <h3>AI関連キーワードの分布</h3>
+                    <canvas id="aiKeywordChart"></canvas>
+                </div>
+                
+                <div class="chart-section">
+                    <h3>研究分野の分布</h3>
+                    <canvas id="fieldChart"></canvas>
+                </div>
+            </div>
+
+            <div class="keyword-cloud">
+                <h3>トレンドキーワード</h3>
+                <div id="wordCloud"></div>
+            </div>
+
+            <div class="insights-section">
+                <h3>トレンド分析結果</h3>
+                <div id="insights"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
