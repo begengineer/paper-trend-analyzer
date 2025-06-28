@@ -103,13 +103,22 @@ app.get('/jsai2025_30_all.pdf', authManager.requireAuth(), (req, res) => {
     });
 });
 
-// 保護されたリソース - CSSとJS
+// ログイン関連ファイルは認証不要
+app.get('/login.css', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.css'));
+});
+
+app.get('/login-secure.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login-secure.js'));
+});
+
+// 保護されたリソース
 app.get('/style.css', authManager.requireAuth(), (req, res) => {
-    res.sendFile(path.join(__dirname, 'style.css'));
+  res.sendFile(path.join(__dirname, 'style.css'));
 });
 
 app.get('/app.js', authManager.requireAuth(), (req, res) => {
-    res.sendFile(path.join(__dirname, 'app.js'));
+  res.sendFile(path.join(__dirname, 'app.js'));
 });
 
 // ヘルスチェックエンドポイント
