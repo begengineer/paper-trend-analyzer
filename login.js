@@ -1,6 +1,6 @@
 class LoginManager {
     constructor() {
-        this.correctPassword = 'jsai2025trend'; // 変更可能なパスワード
+        this.correctPassword = 'testYuki'; // 変更可能なパスワード
         this.sessionKey = 'paperAnalysisAuth';
         this.init();
     }
